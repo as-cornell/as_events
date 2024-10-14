@@ -1,6 +1,6 @@
 
-[![Latest Stable Version](http://poser.pugx.org/as-cornell/as_webhooks_entities/v)](https://packagist.org/packages/as-cornell/as_webhooks_entities)
-[![Latest Unstable Version](http://poser.pugx.org/as-cornell/as_webhooks_entities/v/unstable)](https://packagist.org/packages/as-cornell/as_webhooks_entities)
+[![Latest Stable Version](http://poser.pugx.org/as-cornell/as_events/v)](https://packagist.org/packages/as-cornell/as_events)
+[![Latest Unstable Version](http://poser.pugx.org/as-cornell/as_events/v/unstable)](https://packagist.org/packages/as-cornell/as_events)
 
 # AS EVENTS (as_events)
 
