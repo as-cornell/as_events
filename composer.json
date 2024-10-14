@@ -1,0 +1,17 @@
+{
+    "name": "as-cornell/as_events",
+    "description": "Provides a block of events from a json feed.",
+    "type": "drupal-custom-module",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://communications.as.cornell.edu/",
+    "authors": [
+        {
+            "name": "Mark Wilson",
+            "email": "mew72@cornell.edu",
+            "role": "Author"
+        }
+    ],
+    "support": {},
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -1,0 +1,6 @@
+name: A&S Events
+description: "Provides a block of events from a json feed."
+package: AS
+type: module
+core_version_requirement: ^9 || ^10
+configure: as_events.list
