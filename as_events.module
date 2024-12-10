@@ -125,9 +125,13 @@ function as_events_generate_event_item_markup($event_data)
                   <a href='" . $event_url . "' itemprop='url'>" . $event_title . "</a>
                 </span>";
   if (!empty($event_location)) {
-    $markup = $markup . "<span class='event__location'  itemprop='location'>" . $event_location . ": " . $event_room . "</span>
-                  \n";
+    $markup = $markup . "<span class='event__location'  itemprop='location'>" . $event_location ;
+  if (!empty($event_room)) {
+    $markup = $markup . ": " . $event_room;
+    
   }
+  $markup = $markup . "</span>\n";
+}
   $markup = $markup . "</span></span>";
   // if (!empty($event_description)){
   // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
