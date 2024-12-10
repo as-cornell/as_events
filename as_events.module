@@ -101,7 +101,7 @@ function as_events_generate_event_item_markup($event_data)
   $event_room = $event['room_number'];
   //dates and times
   $event_start_date = date_create($event['event_instances'][0]['event_instance']['start']);
-  if ($event['event_instances'][0]['event_instance']['end']) {
+  if (!empty($event['event_instances'][0]['event_instance']['end'])) {
     $event_end_date = date_create($event['event_instances'][0]['event_instance']['end']);
   } else {
     $event_end_date = NULL;
@@ -124,16 +124,16 @@ function as_events_generate_event_item_markup($event_data)
                 <span class='event__title'>
                   <a href='" . $event_url . "' itemprop='url'>" . $event_title . "</a>
                 </span>";
-  if ($event_location) {
+  if (!empty($event_location)) {
     $markup = $markup . "<span class='event__location'  itemprop='location'>" . $event_location . ": " . $event_room . "</span>
                   \n";
   }
   $markup = $markup . "</span></span>";
-  // if ($event_description){
+  // if (!empty($event_description)){
   // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
   //     }
   // $markup = $markup ."
-  // if ($event_image){
+  // if (!empty($event_image)){
   //         // <span>
   //         //     <img src= '${event_image}' alt= '${event_title}' />
   //         // </span>
