@@ -110,12 +110,10 @@ function as_events_generate_event_item_markup($event_data)
   //$event_description = strtok(strip_tags($event['description']),'.');
   $event_description = strip_tags($event['description']);
   $event_image = $event['photo_url'];
-  $event_ics_link = $event['ics_link'];
+  //$event_ics_link = $event['ics_link'];
   
   // Create the markup
 
-
-  // $markup = kint($event_formatted_date);
   // $markup = $markup . $event_formatted_date['start_month'];
   $markup = "<span class='eventList__event event'  itemscope itemtype='http://schema.org/Event'>
                 <span class='event__dateTime'  itemprop='startDate'>
@@ -135,10 +133,11 @@ function as_events_generate_event_item_markup($event_data)
   // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
   //     }
   // $markup = $markup ."
-
+  // if ($event_image){
   //         // <span>
   //         //     <img src= '${event_image}' alt= '${event_title}' />
   //         // </span>
+  // }
   //         </div>
   //         \n";
 
