@@ -47,7 +47,7 @@ function as_events_get_events_json($events_shown, $keyword_params)
     ));
     // get file contents
     if (($data = @file_get_contents($url, 0, $context)) === false) {
-        print("<h3>No events found on http://cornell.localist.com for events shown:{$events_shown} and keyword:{$keyword_params}</h3>\n");
+        //print("<h3>No events found on http://cornell.localist.com for events shown:{$events_shown} and keyword:{$keyword_params}</h3>\n");
         return;
     } else {
         $data = @file_get_contents($url, 0, $context);
@@ -57,10 +57,11 @@ function as_events_get_events_json($events_shown, $keyword_params)
     }
     if (!empty($json)) {
     $event_json = $json['events'];
-    }
     // set cache
     \Drupal::cache('data')
       ->set($cid, $event_json, time() + 86400);
+    }
+    
   }
   //return data
   return $event_json;
