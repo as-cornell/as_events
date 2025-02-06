@@ -57,9 +57,9 @@ function as_events_get_events_json($events_shown, $keyword_params)
     }
     if (!empty($json)) {
     $event_json = $json['events'];
-    // set cache
+    // set cache, invalidate after 2 hours
     \Drupal::cache('data')
-      ->set($cid, $event_json, time() + 86400);
+      ->set($cid, $event_json, time() + 7200);
     }
     
   }
