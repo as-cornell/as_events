@@ -77,18 +77,6 @@ function as_events_format_event_dates($startdate, $enddate)
     $event_formatted_date['end_date'] = date_format($enddate, "d");
     $event_formatted_date['end_time'] = date_format($enddate, "g:i");
   }
-  //check to see if there's an end date
-  //     if ($enddate){
-  // //don't repeat date if start and end is on same day
-  //       if (date_format($startdate,"M d") == date_format($enddate,"M d")){
-  //           $event_end_date = date_format($enddate,"g:i a");
-  //       }else{
-  //           $event_end_date = date_format($enddate,"M d g:i a");
-  //           }
-  //   $event_formatted_date = $event_start_date ." to ". $event_end_date;
-  // }else{
-  //   $event_formatted_date = $event_start_date;
-  //     }
   return $event_formatted_date;
 }
 
@@ -134,6 +122,7 @@ function as_events_generate_event_item_markup($event_data)
   $markup = $markup . "</span>\n";
 }
   $markup = $markup . "</span></span>";
+  // uncomment to include description
   // if (!empty($event_description)){
   // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
   //     }
@@ -159,7 +148,7 @@ function as_events_help($route_name, RouteMatchInterface $route_match)
     case 'help.page.as_events':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('The A&S Events module provides various blocks of upcoming events from Localist.') . '</p>';
+      $output .= '<p>' . t('The A&S Events module provides lists of upcoming events from Localist.') . '</p>';
 
       return $output;
   }

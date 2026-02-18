@@ -6,7 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
 
 /**
- * Provides a Current Events Block.
+ * Provides an Events Block.  This is legacy, currently only used in the 'curiosity' theme.
  *
  * @Block(
  *   id = "events_block",
@@ -56,7 +56,7 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
     } // There were no events
     else {
       $build['events_block']['#markup'] = "<main>
-                <h1>Events Calendar</h1>
+                <h1>Calendar</h1>
                 <p>There are no upcoming events</p>
                 </main>";
     }
