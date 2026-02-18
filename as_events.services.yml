@@ -1,5 +1,20 @@
 services:
+  # Logger channel
+  logger.channel.as_events:
+    parent: logger.channel_base
+    arguments: ['as_events']
+
+  # Service classes
+  as_events.api:
+    class: Drupal\as_events\Service\EventsApiService
+    arguments: ['@cache.data', '@logger.channel.as_events']
+
+  as_events.formatter:
+    class: Drupal\as_events\Service\EventsFormatterService
+
+  # Twig extension
   as_events.parseEventsJson:
     class: Drupal\as_events\parseEventsJson
+    arguments: ['@as_events.api', '@as_events.formatter']
     tags:
       - { name: twig.extension }
