@@ -94,7 +94,7 @@ class EventsFormatterService {
       $event_end_date = date_create($event['event_instances'][0]['event_instance']['end']);
     }
     else {
-      $event_end_date = NULL;
+      $event_end_date = $event_start_date->modify('+1 hour');
     }
 
     $event_formatted_date = $this->formatEventDates($event_start_date, $event_end_date);
