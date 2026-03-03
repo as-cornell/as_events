@@ -74,8 +74,12 @@ class parseEventsJson extends \Twig\Extension\AbstractExtension {
       foreach ($events_json as $event_data) {
         if ($event_count <= $events_shown) {
           $date = date_create($event_data['event']['event_instances'][0]['event_instance']['start']);
-          $end_date = date_create($event_data['event']['event_instances'][0]['event_instance']['end']);
-
+          // if no end date set end date to $date +1 hour.
+          if ($event_data['event']['event_instances'][0]['event_instance']['end'] !== null) {
+            $end_date = date_create($event_data['event']['event_instances'][0]['event_instance']['end']);
+          } else {
+            $end_date = $date->modify('+1 hour');
+          }
           // Custom fields null handlers.
           $contact_email = !empty($event_data['event']['custom_fields']['contact_email'])
             ? $event_data['event']['custom_fields']['contact_email']
