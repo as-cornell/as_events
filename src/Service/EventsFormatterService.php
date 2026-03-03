@@ -60,12 +60,12 @@ class EventsFormatterService {
   public function formatEventDates($startdate, $enddate) {
     $event_formatted_date['start_month'] = date_format($startdate, "M");
     $event_formatted_date['start_date'] = date_format($startdate, "d");
-    $event_formatted_date['start_time'] = date_format($startdate, "g:i");
+    $event_formatted_date['start_time'] = date_format($startdate, "g:i A");
 
     if ($enddate) {
       $event_formatted_date['end_month'] = date_format($enddate, "M");
       $event_formatted_date['end_date'] = date_format($enddate, "d");
-      $event_formatted_date['end_time'] = date_format($enddate, "g:i");
+      $event_formatted_date['end_time'] = date_format($enddate, "g:i A");
     }
 
     return $event_formatted_date;
@@ -94,7 +94,7 @@ class EventsFormatterService {
       $event_end_date = date_create($event['event_instances'][0]['event_instance']['end']);
     }
     else {
-      $event_end_date = $event_start_date->modify('+1 hour');
+      $event_end_date = NULL;
     }
 
     $event_formatted_date = $this->formatEventDates($event_start_date, $event_end_date);
