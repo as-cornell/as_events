@@ -78,7 +78,7 @@ class parseEventsJson extends \Twig\Extension\AbstractExtension {
           if ($event_data['event']['event_instances'][0]['event_instance']['end'] !== null) {
             $end_date = date_create($event_data['event']['event_instances'][0]['event_instance']['end']);
           } else {
-            $end_date = $date->modify('+1 hour');
+            $end_date = (clone $date)->modify('+1 hour');
           }
           // Custom fields null handlers.
           $contact_email = !empty($event_data['event']['custom_fields']['contact_email'])
